@@ -1,8 +1,5 @@
-
-
-
-export { default as headlogo } from "../assets/img/logo.png";
-export { default as logo } from "../assets/img/logo-unfluke.png";
+export { default as headlogo } from "../assets/img/LOGO.png";
+export { default as logo } from "../assets/img/logo.svg";
 export { default as logoPng } from "../assets/img/logo/logo.png";
 export { default as logoSvg } from "../assets/img/logo/logo.svg";
 export { default as logoFivePng } from "../assets/img/logo/logo-five.png";
@@ -368,10 +365,10 @@ export { default as Icon11 } from "../assets/img/icon/icon-11.svg";
 export { default as Icon12 } from "../assets/img/icon/icon-12.svg";
 export { default as Icon13 } from "../assets/img/icon/icon-13.svg";
 export { default as Icon14 } from "../assets/img/icon/icon-14.svg";
-export { default as Icon15 } from "../assets/img/icon/icon-15.svg";
-export { default as Icon16 } from "../assets/img/icon/icon-16.svg";
-export { default as Icon17 } from "../assets/img/icon/icon-17.svg";
-export { default as Icon18 } from "../assets/img/icon/icon-18.svg";
+export { default as Icon15 } from "../assets/img/hic.jpg";
+export { default as Icon16 } from "../assets/img/hs.jpg";
+export { default as Icon17 } from "../assets/img/bs.jpg";
+export { default as Icon18 } from "../assets/img/abs.png";
 export { default as Icon19 } from "../assets/img/icon/icon-19.svg";
 export { default as Icon20 } from "../assets/img/icon/icon-20.svg";
 export { default as Icon21 } from "../assets/img/icon/icon-21.svg";
