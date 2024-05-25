@@ -4,33 +4,60 @@ import { Icon19, Icon20, Icon21, logo } from "../imagepath";
 
 const Footer = () => {
   return (
-    <footer className="footer row m-0 p-0 pt-3 pb-3 justify-content-md-between justify-content-center align-items-center flex-md-row flex-col" style={{backgroundColor:'rgb(245 244 244)'}}>
-      <div className="w-auto ms-2">
-        <p className="m-0 p-0 text-secondary w-auto">
-          2024 © Unfluke. All rights reserved.
-        </p>
+    <footer className="footer">
+      {/* Footer Top */}
+      <div className="footer-top">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-4 col-md-6">
+              {/* Footer Widget */}
+              <div className="footer-widget footer-about">
+                
+                <div className="footer-about-content">
+                  
+                </div>
+              </div>
+              {/* /Footer Widget */}
+            </div>
+            
+          </div>
+        </div>
       </div>
-      <div className="w-auto d-flex align-items-center ">
-        <Link className=" w-md-auto ms-md-3 me-md-3 ms-1 me-1" to='https://api.whatsapp.com/send/?phone=%2B919971701053&text&type=phone_number&app_absent=0'>
-          <i className=" m-0 p-0 w-auto fs-3 bi bi- bi-whatsapp"></i>
-        </Link>
-        <Link className=" w-md-auto ms-md-3 me-md-3 ms-1 me-1" to='https://twitter.com/aseem_singhal'>
-          <i className="m-0 p-0 w-auto fs-3 bi bi- bi-twitter"></i>
-        </Link>
-
-        <Link className=" w-md-auto ms-md-3 me-md-3 ms-1 me-1" to='https://www.linkedin.com/in/singhalaseem/'>
-          <i className="m-0 p-0 w-auto fs-3 bi bi- bi-linkedin"></i>
-        </Link>
-        <Link className=" w-md-auto ms-md-3 me-md-3 ms-1 me-1">
-          <p className="m-0 p-0 w-auto">Terms and conditions</p>
-        </Link>
-        <Link className=" w-md-auto ms-md-3 me-md-3 ms-1 me-1">
-          <p className="m-0 p-0 w-auto">Refund Policy</p>
-        </Link>
-        <Link className=" w-md-auto ms-md-3 me-md-3 ms-1 me-1">
-          <p className="m-0 p-0 w-auto">Privacy Policy</p>
-        </Link>
+      {/* /Footer Top */}
+      {/* Footer Bottom */}
+      <div className="footer-bottom">
+        <div className="container">
+          {/* Copyright */}
+          <div className="copyright">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="privacy-policy">
+                  <ul>
+                    <li>
+                      <Link to="/term-condition">Terms and Conditions</Link>
+                    </li>
+                    <li>
+                      <Link to="/privacy-policy">Refund Policy | Privacy Policy</Link>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="copyright-text">
+                  <img src={Icon20} alt="" className="img-fluid mx-2" />
+                  
+                  <img src={Icon19} alt="" className="img-fluid mx-2" />
+                  <img src={Icon21} alt="" className="img-fluid mx-2" />
+                  <p className="mb-0 ">2024 © Unfluke. All rights reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* /Copyright */}
+        </div>
       </div>
+      {/* /Footer Bottom */}
     </footer>
   );
 };

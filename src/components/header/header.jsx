@@ -1,34 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { logo } from "../imagepath"; // Adjust the path to your logo
+import { Link } from "react-router-dom";
+import { headlogo } from "../imagepath";
 
 const Header = () => {
-  const location = useLocation();
-  const [navbar, setNavbar] = useState(false);
-
-  useEffect(() => {
-    const checkScroll = () => {
-      if (window.scrollY >= 90) {
-        setNavbar(true);
-      } else {
-        setNavbar(false);
-      }
-    };
-
-    if (location.pathname === '/') {
-      window.addEventListener("scroll", checkScroll);
-      checkScroll(); // Set the initial state based on current scroll position
-    } else {
-      setNavbar(true); // Set the navbar state for non-root paths
-    }
-
-    return () => {
-      if (location.pathname === '/') {
-        window.removeEventListener("scroll", checkScroll);
-      }
-    };
-  }, [location.pathname]);
-
   useEffect(() => {
     document.body?.classList?.remove("menu-opened");
     return () => {
@@ -36,47 +10,85 @@ const Header = () => {
     };
   }, []);
 
-  const [mobileSubMenus, setMobileSubMenus] = useState({
-    mobileSubMenu: false,
-    mobileSubMenu2: false,
-    mobileSubMenu22: false,
-    mobileSubMenu3: false,
-    mobileSubMenu32: false,
-    mobileSubMenu4: false,
-    mobileSubMenu42: false,
-    mobileSubMenu43: false,
-    mobileSubMenu5: false,
-  });
+  // change header background on scroll
+  const [navbar, setNavbar] = useState(false);
+  // Mobile Menu toggle
+  const [mobileSubMenu, setMobileSubMenu] = useState(false);
+  const [mobileSubMenu2, setMobileSubMenu2] = useState(false);
+  const [mobileSubMenu22, setMobileSubMenu22] = useState(false);
+  const [mobileSubMenu3, setMobileSubMenu3] = useState(false);
+  const [mobileSubMenu32, setMobileSubMenu32] = useState(false);
+  const [mobileSubMenu4, setMobileSubMenu4] = useState(false);
+  const [mobileSubMenu42, setMobileSubMenu42] = useState(false);
+  const [mobileSubMenu43, setMobileSubMenu43] = useState(false);
+  const [mobileSubMenu5, setMobileSubMenu5] = useState(false);
 
   const openMobileMenu = () => {
     document.body?.classList?.add("menu-opened");
   };
-
   const hideMobileMenu = () => {
     document.body?.classList?.remove("menu-opened");
   };
 
-  const toggleMobileSubMenu = (menu) => (e) => {
+  const openMobileSubMenu = (e) => {
     e.preventDefault();
-    setMobileSubMenus((prev) => ({
-      ...prev,
-      [menu]: !prev[menu],
-    }));
+    setMobileSubMenu(!mobileSubMenu);
+  };
+  const openMobileSubMenu2 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu2(!mobileSubMenu2);
+  };
+  const openMobileSubMenu22 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu22(!mobileSubMenu22);
+  };
+  const openMobileSubMenu3 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu3(!mobileSubMenu3);
+  };
+  const openMobileSubMenu32 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu32(!mobileSubMenu32);
+  };
+  const openMobileSubMenu4 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu4(!mobileSubMenu4);
+  };
+  const openMobileSubMenu42 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu42(!mobileSubMenu42);
+  };
+  const openMobileSubMenu43 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu43(!mobileSubMenu43);
+  };
+  const openMobileSubMenu5 = (e) => {
+    e.preventDefault();
+    setMobileSubMenu5(!mobileSubMenu5);
   };
 
+  const changeHeaderBackground = () => {
+    if (window.scrollY >= 90) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeHeaderBackground);
   return (
     <header className="header">
       <div className="header-fixed">
         <nav
           className={
-            location.pathname !== '/' || navbar
+            navbar
               ? "navbar navbar-expand-lg header-nav scroll-sticky add-header-bg"
               : "navbar navbar-expand-lg header-nav scroll-sticky"
           }
         >
           <div className="container">
             <div className="navbar-header">
-              <Link id="mobile_btn"  onClick={openMobileMenu}>
+              <Link id="mobile_btn" to="/" onClick={openMobileMenu}>
                 <span className="bar-icon">
                   <span />
                   <span />
@@ -84,18 +96,18 @@ const Header = () => {
                 </span>
               </Link>
               <Link to="/" className="navbar-brand logo">
-                <img src={logo} className="img-fluid" alt="Logo" />
+                <img src={headlogo} className="img-fluid" alt="Logo" />
               </Link>
             </div>
             <div className="main-menu-wrapper">
               <div className="menu-header">
                 <Link to="/" className="menu-logo">
-                  <img src={logo} className="img-fluid" alt="Logo" />
+                  <img src={headlogo} className="img-fluid" alt="Logo" />
                 </Link>
                 <Link
                   id="menu_close"
                   className="menu-close"
-                  
+                  to="/"
                   onClick={hideMobileMenu}
                 >
                   <i className="fas fa-times" />
@@ -103,17 +115,34 @@ const Header = () => {
               </div>
               <ul className="main-nav">
                 <li className="active">
-                  <Link to="/">Home</Link>
+                  <Link
+                    className={mobileSubMenu ? "" : ""}
+                    to="/"
+                    
+                  >
+                    Home 
+                  </Link>
+                  
                 </li>
                 <li className="has-submenu">
-                  <Link to="/about-us">About Us</Link>
+                  <Link to="/about-us">
+                    About US
+                  </Link>
+                
                 </li>
                 <li className="has-submenu">
-                  <Link to="/career">Career</Link>
+                  <Link to="/career">
+                    Career
+                  </Link>
+                
                 </li>
                 <li className="has-submenu">
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/contact">
+                    Contact Us 
+                  </Link>
+                
                 </li>
+                
                 <li className="login-link">
                   <Link to="/login">Login / Signup</Link>
                 </li>

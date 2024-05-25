@@ -1,24 +1,64 @@
 import React, { useState } from "react";
-import { bannerimg, Share } from "../imagepath";
-import { Link } from "react-router-dom";
-import { Section1, Section2, Section3, Section4 ,bottomSectionImg} from "../imagePathNew";
+import {
+  bannerimg,
+  Become1,
+  Become2,
+  CertificateIcon,
+  Course1,
+  Course2,
+  Course3,
+  Course4,
+  Course5,
+  Course6,
+  CourseIcon,
+  GratuateIcon,
+  Icon01,
+  Icon02,
+  Icon03,
+  Icon04,
+  Icon1,
+  Icon10,
+  Icon12,
+  Icon13,
+  Icon14,
+  Icon15,
+  Icon16,
+  Icon17,
+  Icon18,
+  Icon2,
+  Icon7,
+  Icon8,
+  Icon9,
+  Join,
+  PencilIcon,
+  Share,
+  User1,
+  User2,
+  User3,
+  User4,
+  User5,
+  User6,
+} from "../imagepath";
+import TopCategory from "./slider/topCategory";
 import Loginbg from "../../assets/img/banner.png";
+import tv from "../../assets/img/tv.jpg";
+import TrendingCourse from "./slider/trendingCourse";
+import Companies from "./slider/companies";
 import BgBanner1 from "../../assets/img/bg-banner-01.png";
+import BgBanner2 from "../../assets/img/bg-banner-02.png";
+import UserLove from "../../assets/img/user-love.jpg";
+import Blog from "./slider/blog";
+
 import Testimonial from "./slider/testimonial";
 import Select from "react-select";
-
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import CountUp from "react-countup";
+// import { abs  } from "../imagepath";
 
-const options = [
-  { label: "Category", value: "Category" },
-  { label: "Angular", value: "Angular" },
-  { label: "Node Js", value: "Node Js" },
-  { label: "React", value: "React" },
-  { label: "Python", value: "Python" },
-];
+
 
 export const Home = () => {
   const [setValue] = useState(null);
@@ -67,7 +107,7 @@ export const Home = () => {
         color: "black",
       },
       // eslint-disable-next-line no-dupe-keys
-      borderRadius: "50px",
+      // borderRadius: "50px",
       outline: "none",
     }),
     menu: (base) => ({ ...base, marginTop: "2px" }),
@@ -97,7 +137,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="main-wrapper m-0 p-0">
+      <div className="main-wrapper">
         {/* banner */}
         <section
           className="home-slide d-flex align-items-center"
@@ -109,12 +149,19 @@ export const Home = () => {
                 <div className="home-slide-face aos" data-aos="fade-up">
                   <div className="home-slide-text ">
                     <h1>One stop solution to test your Strategy ideas</h1>
-                    <p>
-                      As we are launching a Beta soon, we are giving away 1
-                      month FREE subscription to our early backers. Sign up
-                      below to get FREE subscription.
-                    </p>
+                    <p>As we are launching a Beta soon, we are giving away 1 month FREE subscription to our early backers. Sign up below to get FREE subscription.</p>
                   </div>
+                  <ul className="course-list">
+                    <li>
+                      <i className="fa-solid fa-circle-check" />
+                      Free 30-day subscription
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-circle-check" />
+                      No credit card needed
+                    </li>
+                  </ul>
+                 
                 </div>
               </div>
               <div className="col-md-5 d-flex align-items-center">
@@ -127,150 +174,335 @@ export const Home = () => {
         </section>
         {/* /banner */}
 
-        {/* Top Category with Owl Carousel */}
-        <section className="section how-it-works">
+        {/* Home banner bottom */}
+        <section className="section student-course">
           <div className="container">
-            <div className="section-header aos" data-aos="fade-up">
-              <div className="section-sub-head w-100">
-                <span className="text-center">Features</span>
-                <h2 className="text-center">
-                  Excellent Features. Excellent Results
-                </h2>
+            <div className="course-widget">
+              <div className="row">
+                <div className="col-lg-3 col-md-6">
+                  <div className="course-full-width">
+                    <div
+                      className="blur-border course-radius align-items-center aos"
+                      data-aos="fade-up"
+                    >
+                      <div className="online-course d-flex align-items-center">
+                        {/* <div className="course-img">
+                          <img src={PencilIcon} alt="" />
+                        </div> */}
+                        <div className="course-inner-content">
+                          <h3><b>
+                            {/* <span>10</span>K */}
+                            <span className="d-flex">
+                              <CountUp
+                                start={0}
+                                end={100}
+                                delay={1}
+                                duration={4}
+                              />
+                              +
+                            </span></b>
+                          </h3>
+                          <p><b>Indicators</b> </p>
+                          <p>Help you get best scanners</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 d-flex">
+                  <div className="course-full-width">
+                    <div
+                      className="blur-border course-radius aos"
+                      data-aos="fade-up"
+                    >
+                      <div className="online-course d-flex align-items-center">
+                        {/* <div className="course-img">
+                          <img src={CourseIcon} alt="" />
+                        </div> */}
+                        <div className="course-inner-content">
+                          <h3>
+                            <b>
+                            <span className="d-flex">
+                              <CountUp start={0} end={1024} delay={1} /> MB+
+                            </span>
+                            </b>
+                          </h3>
+                          <p><b>Market Data</b></p>
+                          <p>Scan results and alerts</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 d-flex">
+                  <div className="course-full-width">
+                    <div
+                      className="blur-border course-radius aos"
+                      data-aos="fade-up"
+                    >
+                      <div className="online-course d-flex align-items-center">
+                        {/* <div className="course-img">
+                          <img src={CertificateIcon} alt="" />
+                        </div> */}
+                        <div className="course-inner-content">
+                          <h3>
+                            <b>
+                            <span className="d-flex">
+                              <CountUp
+                                start={0}
+                                end={6}
+                                delay={1}
+                                duration={5}
+                              />
+                              + Years
+                            </span>
+                            </b>
+                          </h3>
+                          <p><b>Martket Data </b></p>
+                          <p>In equity, Futures and Options</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 d-flex">
+                  <div className="course-full-width">
+                    <div
+                      className="blur-border course-radius aos"
+                      data-aos="fade-up"
+                    >
+                      <div className="online-course d-flex align-items-center">
+                        <div className="course-img">
+                          <img src={GratuateIcon} alt="" />
+                        </div>
+                        <div className="course-inner-content">
+                          <h3>
+                            <b>
+                              <span className="d-flex center">
+                              <CountUp
+                                start={0}
+                                end={1000}
+                                delay={1}
+                                duration={2}
+                              />
+                               +
+                            </span>
+                            </b>
+                          </h3>
+                          <p><b>Option strategies</b></p>
+                          <p>Use indicators, ideas!</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div
-              className="section-text aos w-100"
-              data-aos="fade-up"
-              style={{ maxWidth: "100%" }}
-            >
-              <p className="text-center ">
-                Start working with Unfluke to manage all your strategies
-              </p>
             </div>
           </div>
         </section>
-        {/* Top Category with Owl Carousel */}
-        {/* Share knowledge */}
-        <section className="section share-knowledge">
+        
+        <div className="text-center-padding">
+        <span className="feature-tag">FEATURES</span>
+        <h5 className="title-text fs-2 fw-medium m-2">Excellent Features. Excellent Results</h5>
+        <p className="normal-text">
+          Start working with{' '}
+          <a href="#" className="unfluke-link">
+            Unfluke
+          </a>{' '}
+          to manage all your strategies
+        </p>
+      </div>
+        <section className="section master-skill">
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
-                <div className="knowledge-img aos" data-aos="fade-up">
-                  <img src={Section1} alt="" className="img-fluid" />
+            <div className="col-lg-5 col-md-12 flex align-items-end">
+              <img src={Icon15} alt="" className="img-fluid col-lg-5 " />
+              </div>
+              <div className="col-lg-7 col-md-10">
+                <div className="section-header aos" data-aos="fade-up">
+                  <div className="section-sub-head">
+                    
+                    <h2>HISTORICAL INTRADAY CHARTS</h2>
+                  </div>
+                </div>
+                
+                <div className="career-group aos" data-aos="fade-up">
+                  <div className="row">
+                    <div className="col-lg-9 col-md-11 flex">
+                      <div className="certified-group blur-border d-flex">
+                        <div className="get-certified d-flex align-items-center">
+                          <div className="blur-box">
+                            <div className="certified-img ">
+                              <img src={Icon1} alt="" className="img-fluid" />
+                            </div>
+                          </div>
+                          <div>
+                          <h4>Different Segments Charts</h4>
+                          <p>Get historical intraday charts of Equity, Futures and Options.</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <ul>
+                    <div className="col-lg-9 col-md-11 flex">
+                      <div className="certified-group blur-border d-flex">
+                        <div className="get-certified d-flex align-items-center">
+                          <div className="blur-box">
+                            <div className="certified-img ">
+                              <img src={Icon02} alt="" className="img-fluid" />
+                            </div>
+                          </div>
+                          <div>
+                          <h4>Data since 2017</h4>
+                          <p>Currently we have data since 2017 and its updated real time.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </ul>
+                    
+                  </div>
                 </div>
               </div>
-              <div className="col-md-6 d-flex align-items-center">
-                <div className="join-mentor aos" data-aos="fade-up">
-                  <h2>HISTORICAL INTRADAY CHARTS</h2>
-                  <p>
-                    Get historical intraday charts of Equity, Futures and
-                    Options.
-                  </p>
-                  <ul className="course-list">
-                    <li>
-                      <i className="fa-solid fa-circle-check" />
-                      Different Segment Charts
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-circle-check" />
-                      Data Since 2017
-                    </li>
-                  </ul>
+              
+            </div>
+          </div>
+        </section>
+
+
+        <section className="section master-skill">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-7 col-md-12">
+                <div className="section-header aos" data-aos="fade-up">
+                  <div className="section-sub-head">
+                    <h2>HISTORICAL SCANNER</h2>
+                  </div>
                 </div>
+
+                <div className="career-group aos" data-aos="fade-up">
+                  <div className="row">
+                    <div className="col-lg-9 col-md-11 flex">
+                      <div className="certified-group blur-border d-flex">
+                        <div className="get-certified d-flex align-items-center">
+                          <div className="blur-box">
+                            <div className="certified-img">
+                              <img src={Icon1} alt="" className="img-fluid" />
+                            </div>
+                          </div>
+                          <div>
+                            <h4>Different Segments Scanner</h4>
+                            <p>Check scanner results using a combination of different indicators and time frames.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-9 col-md-11 flex">
+                      <div className="certified-group blur-border d-flex">
+                        <div className="get-certified d-flex align-items-center">
+                          <div className="blur-box">
+                            <div className="certified-img">
+                              <img src={Icon02} alt="" className="img-fluid" />
+                            </div>
+                          </div>
+                          <div>
+                            <h4>Data since 2017 for FNO</h4>
+                            <p>Get scanner results of even Futures and Options (intraday) since 2017</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-5 col-md-12 flex align-items-center">
+                <img
+                  src={Icon16}
+                  alt=""
+                  className="img-fluid block rounded aos-init aos-animate"
+                  data-aos="fade-right"
+                  data-aos-duration="200"
+                />
               </div>
             </div>
           </div>
         </section>
+
+        
         <section
           className="section share-knowledge"
           style={{ backgroundImage: "url(" + BgBanner1 + ")" }}
         >
           <div className="container">
             <div className="row">
-              <div className="col-md-6 d-flex align-items-center">
-                <div className="join-mentor aos" data-aos="fade-up">
-                  <h2>HISTORICAL SCANNER</h2>
-                  <p>
-                    Check scanner results using a combination of different
-                    indicators and time frames.
-                  </p>
-                  <ul className="course-list">
-                    <li>
-                      <i className="fa-solid fa-circle-check" />
-                      Different Segment Scanner
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-circle-check" />
-                      Data Since 2017 for FNO
-                    </li>
-                  </ul>
-                </div>
-              </div>
               <div className="col-md-6">
                 <div className="knowledge-img aos" data-aos="fade-up">
-                  <img src={Section2} alt="" className="img-fluid" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="section share-knowledge">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="knowledge-img aos" data-aos="fade-up">
-                  <img src={Section3} alt="" className="img-fluid" />
+                  <img src={Icon17} alt="" className="img-fluid" />
                 </div>
               </div>
               <div className="col-md-6 d-flex align-items-center">
                 <div className="join-mentor aos" data-aos="fade-up">
                   <h2>BACKTEST STRATEGIES</h2>
+                  
                 </div>
               </div>
             </div>
           </div>
         </section>
+
+
         <section
           className="section share-knowledge"
           style={{ backgroundImage: "url(" + BgBanner1 + ")" }}
         >
           <div className="container">
             <div className="row">
+              
               <div className="col-md-6 d-flex align-items-center">
                 <div className="join-mentor aos" data-aos="fade-up">
                   <h2>ADVANCE BACKTEST STRATEGIES</h2>
+                  
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="knowledge-img aos" data-aos="fade-up">
-                  <img src={Section4} alt="" className="img-fluid" />
+                  <img src={Icon18} alt="" className="img-fluid" />
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {/* /Share knowledge */}
-
-        {/**Last section */}
-        <div
-          className="section p-5"
-          
+        
+        <section
+          className="section latest-blog"
+          style={{ backgroundImage: "url(" + BgBanner2 + ")" }}
         >
           <div className="container">
-            <div className="row m-0 p-0 align-items-center justify-content-center">
-              <h2 className="m-0 p-0 text-center mt-4 mb-4">In partnership with</h2>
-              <img src={bottomSectionImg} className="m-0 p-0 mt-3 mb-5" alt="" style={{height:'100px',width:'100px'}}/>
-              <p className="m-0 p-0 text-center text-secondary">
-                TradingView is a widely recognized and highly regarded platform
-                among traders and investors, with a vast user base spanning the
-                globe. It offers state-of-the-art charting tools that allow
-                market enthusiasts to engage, analyze data, and prepare for btc
-                usd, eth usd trading and various other assets.
-              </p>
+            <div className="section-header aos" data-aos="fade-up">
+              <div className="section-sub-head feature-head text-center mb-0">
+                  <h4>In partnership with</h4>
+                  
+                <div className="section-text aos" data-aos="fade-up">
+                <div className="list-inline-item mx-4 mx-xl-5 mb-3">
+                  <img src={tv} alt="" height="64" />
+                </div>
+
+                  <p className="mb-0">
+                   TradingView is a widely recognized and highly regarded platform
+                    among traders and investers,with a vast user base spanning the globe.
+                    It offers state-of-the-art charting tools that allow market enthusiasts to
+                    engage, analyze data, prepare for BTC USD, ETH USD trading and various other assets.
+                  </p>
+                </div>
+              </div>
             </div>
+            
           </div>
-        </div>
-        {/** /Last section */}
+        </section>
+        {/* /Blog */}
+
+       
       </div>
     </>
   );

@@ -848,7 +848,7 @@ button.bg-danger:hover {
     -webkit-justify-content: space-between;
     -ms-flex-pack: space-between;
     position: relative;
-    height: 95px;
+    height: 70px;
     padding: 0 20px;
     margin-bottom: 0;
     transition-duration: 0.4s;
@@ -1593,6 +1593,16 @@ html.menu-opened body {
 	display: -ms-flexbox;
 	display: flex;
 	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%; /* or your desired width */
+    height: 2rem;
+}
+
+.footer-address img {
+    max-width: 100%;
+    height: auto;
 }
 .footer-contact-info .footer-address span {
 	margin-right: 20px;
@@ -1984,6 +1994,7 @@ html.menu-opened body {
     position: relative;
     top: 0;
     transition: top ease 0.5s;
+    max-height: 50%;
 }
 .course-full-width:hover {
 	top: -10px;
@@ -2513,7 +2524,7 @@ html.menu-opened body {
 }
 .share-knowledge {
 	padding: 60px 0px;
-	/* background-image: url(../img/bg-banner-01.png); */
+	background-image: url(../img/bg-banner-01.png);
     background-repeat: no-repeat;
     background-position: center;
 	background-size: cover;
@@ -9547,6 +9558,7 @@ textarea:focus {
     font-weight: 400;
     font-size: 16px;
     color: #FFD600;
+    
 }
 .footer-top-five .footer-contact-info p {
     font-weight: 400;
@@ -26377,3 +26389,45 @@ svg.feather.feather-log-out.me-1 {
     background-color: #FF875A !important;
     border: 1px solid #FF875A !important;
 } */
+
+.text-center-padding {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .feature-tag {
+    background-color: #ebf8ff;
+    color: #3182ce;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    margin-top: 3rem;
+  }
+  
+  .title-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  
+  .normal-text {
+    margin-top: 0.5rem;
+    color: #6b7280; /* Example color */
+  }
+  
+  .unfluke-link {
+    color: #3182ce;
+    font-weight: 600;
+  }
+ 
+
+.section.master-skill .col-lg-5 img.img-fluid {
+    width: 100%; /* Ensures the image takes full width of the container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 105px; /* Adds a subtle shadow */
+    margin-right: 0%;
+  }
+  
