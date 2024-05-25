@@ -1,4 +1,4 @@
-export { default as headlogo } from "../assets/img/LOGO.png";
+export { default as headlogo } from "../assets/img/unfluke.png";
 export { default as logo } from "../assets/img/logo.svg";
 export { default as logoPng } from "../assets/img/logo/logo.png";
 export { default as logoSvg } from "../assets/img/logo/logo.svg";
